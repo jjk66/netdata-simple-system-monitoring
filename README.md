@@ -6,7 +6,8 @@ https://roadmap.sh/projects/simple-monitoring-dashboard
 ## Requirements
 This project is to pratice setting up a basic system monitoring tool. It will use Netdata to monitor basic system metrics.
 - Install Netdata on a Linux system
-  - this project will setup for a MacOs system
+  - this project will setup for a MacOs Silicon system
+  - use homebrew to install
 - Configure to monitor CPU, memory usage, and disk I/O
 - Access monitor via a web browser
 - Set up an alert, ie CPU above 80%
@@ -48,6 +49,8 @@ cd /opt/homebrew/opt/netdata/sbin/
 ./netdata -D
 # output
 time=2026-08-17T22:54:18.822-06:00 comm=netdata source=daemon level=error errno="2, No such file or directory" tid=2701859  msg="CLAIM: cannot load cloud config '/opt/homebrew/var/lib/netdata/cloud.d/cloud.conf'. Running with internal defaults."
+# Url for local host
+http://localhost:19999
 ```
 
 Configure Netdata
