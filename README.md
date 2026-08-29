@@ -55,14 +55,15 @@ http://localhost:19999
 
 Configure Netdata
 ```bash
-/opt/homebrew/etc/netdata/.bottle/etc/edit-config
-# Reference stock configuration files
-/opt/homebrew/Cellar/netdata/{NETDATA_VERSION}/lib/netdata/conf.d/
-```
+# General Configuration
+/opt/homebrew/etc/netdata/edit-config netdata.conf
 
-Adding additional certificates, place .pem files in
-```bash
-/opt/hombrew/etc/opnessl@3/certs
-# ingest by running
-/opt/homebrew/opt/openssl@3/bin/c_rehash
+# Set up email notifications
+# Modify SEND_EMAILS="YES"
+# Modify DEFAULT_RECIPIENT_EMAIL="youremail@somewhere.com"
+/opt/homebrew/etc/netdata/edit-config health_alarm_notify.conf
+
+# After saving updates, cycle the netdata process
+brew services stop netdata
+brew services start netdata
 ```
